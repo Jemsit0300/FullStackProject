@@ -1,0 +1,13 @@
+# Django
+django/venv/
+django/__pycache__/
+django/**/*.pyc
+django/db.sqlite3
+django/.env
+
+# React
+react/node_modules/
+react/build/
+react/.env
+
+
