@@ -1,0 +1,7 @@
+db.sqlite3
+
+# If you are using a different database, you might want to ignore its files as well.# Virtual environment
+venv/
+env/
+ENV/
+.venv/
