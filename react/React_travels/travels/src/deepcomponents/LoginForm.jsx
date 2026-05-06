@@ -22,7 +22,7 @@ const LoginForm = ({ onLogin }) => {
     setMessage("");
 
     try {
-      const response = await axios.post("${API_URL}/api/login/", form);
+      const response = await axios.post(`${API_URL}/api/login/`, form);
       setMessage("Login successful!");
 
       if (onLogin) {

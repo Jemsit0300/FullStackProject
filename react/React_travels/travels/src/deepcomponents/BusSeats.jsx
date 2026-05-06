@@ -59,7 +59,7 @@ const BusSeats = ({ token, userId }) => {
     
     try {
       const response = await axios.post(
-        "${API_URL}/api/booking/",
+        `${API_URL}/api/booking/`,
         { seat: seatId },
         {
           headers: {

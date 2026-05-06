@@ -22,7 +22,7 @@ const RegisterForm = () => {
     setMessage("");
 
     try {
-      await axios.post("${API_URL}/api/register/", form);
+      await axios.post(`${API_URL}/api/register/`, form);
       setMessage("Registration successful! You can now login.");
       setForm({ username: "", email: "", password: "" }); // Clear form
     } catch (error) {
