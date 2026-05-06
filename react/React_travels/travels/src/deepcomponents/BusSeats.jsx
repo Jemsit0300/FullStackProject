@@ -1,4 +1,5 @@
-import axios from "axios";  
+import axios from "axios";
+import API_URL from "../api";  
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -27,7 +28,7 @@ const BusSeats = ({ token, userId }) => {
   useEffect(() => {
     const fetchBusDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/buses/${busId}/`);
+        const response = await axios.get(`${API_URL}/api/buses/${busId}/`);
         setBus(response.data);
         setSeats(response.data.seats || []);
       } catch (error) {
@@ -58,7 +59,7 @@ const BusSeats = ({ token, userId }) => {
     
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/booking/",
+        "${API_URL}/api/booking/",
         { seat: seatId },
         {
           headers: {

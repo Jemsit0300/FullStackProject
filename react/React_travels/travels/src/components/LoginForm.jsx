@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import API_URL from "../api";
 const LoginForm = ({ onLogin }) => {
   const [form, setForm] = useState({
     username: "",
@@ -17,7 +17,7 @@ const LoginForm = ({ onLogin }) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:8000/api/login/", form);
+      const response = await axios.post(`${API_URL}/api/login/`, form);
 
       setMessage("Login success");
 

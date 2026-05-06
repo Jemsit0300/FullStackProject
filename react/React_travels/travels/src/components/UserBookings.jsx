@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import API_URL from "../api";
 
 const UserBookings = ({ token, userId }) => {
   const [bookings, setBookings] = useState([]);
@@ -12,7 +13,7 @@ useEffect(() => {
     }
 
     try {
-      const response = await axios.get(`http://localhost:8000/api/user/${userId}/bookings/`,
+      const response = await axios.get(`${API_URL}/api/user/${userId}/bookings/`,
         {
           headers: {
             Authorization: `Token ${token}`,

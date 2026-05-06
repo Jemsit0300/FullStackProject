@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import API_URL from "../api";
 import { Link } from "react-router-dom";
 
 const RegisterForm = () => {
@@ -21,7 +22,7 @@ const RegisterForm = () => {
     setMessage("");
 
     try {
-      await axios.post("http://localhost:8000/api/register/", form);
+      await axios.post("${API_URL}/api/register/", form);
       setMessage("Registration successful! You can now login.");
       setForm({ username: "", email: "", password: "" }); // Clear form
     } catch (error) {

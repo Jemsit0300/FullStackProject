@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import API_URL from "../api";
 import { Link } from "react-router-dom";
 
 const LoginForm = ({ onLogin }) => {
@@ -21,7 +22,7 @@ const LoginForm = ({ onLogin }) => {
     setMessage("");
 
     try {
-      const response = await axios.post("http://localhost:8000/api/login/", form);
+      const response = await axios.post("${API_URL}/api/login/", form);
       setMessage("Login successful!");
 
       if (onLogin) {
